@@ -1,59 +1,90 @@
-# Event
+# 🏆 Event & Project Submission Management System (Angular 20.1.3)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+A modern web-based platform built with **Angular 20.1.3** that allows **organizers** to host events, manage registrations, approve/reject project submissions, and declare winners — all in one interactive dashboard.
 
-## Development server
+This project was developed as part of an **academic assignment** to demonstrate real-world use of **Angular concepts**, **API integration**, and **responsive UI design**.
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+| Page | Description |
+|------|--------------|
+| 🏠 Home Page | Hero section and overview of the platform |
+| 🧍 Register Page | User registration with form validation |
+| 🏁 Register Event | Organizer creates new hackathon event |
+| 📊 Dashboard | Real-time statistics of users, events, and submissions |
+| 📂 Project Submissions | Approve/Reject/View submissions dynamically |
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🎯 Features
 
-To build the project run:
+✅ **User Registration & Login System**  
+- Separate forms for new users and existing users  
+- Input validation with visual feedback  
 
-```bash
-ng build
-```
+✅ **Event Management**  
+- Organizers can create new events  
+- API-based event listing and management  
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+✅ **Project Submission Tracking**  
+- Approve, reject, or view submitted projects  
+- Displays total, approved, rejected, and pending submissions  
 
-## Running unit tests
+✅ **Admin Dashboard**  
+- Real-time statistics for users, competitions, and submissions  
+- Dynamic values fetched via API  
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+✅ **Responsive & Animated UI**  
+- Built using **Bootstrap**, **Animate.css**, and **Font Awesome**  
+- Professional modern dark-themed design  
 
-```bash
-ng test
-```
+---
 
-## Running end-to-end tests
+## 🧱 Tech Stack
 
-For end-to-end (e2e) testing, run:
+| Technology | Purpose |
+|-------------|----------|
+| **Angular 20.1.3** | Frontend framework |
+| **TypeScript** | Logic and type safety |
+| **HTML5 / CSS3 / Bootstrap** | UI design and responsiveness |
+| **Animate.css** | UI animations |
+| **Font Awesome** | Icons |
+| **Netlify** | Hosting (recommended) |
+| **Mock API / JSON Server / Backend API** | Data fetching and submission handling |
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🧩 Angular Concepts Used
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Concept | Description | Example |
+|----------|--------------|----------|
+| **Data Binding** | Connects template and logic | `{{dashboardData.totalUsers}}` |
+| **Event Binding** | Calls methods on user actions | `(click)="onLogin()"` |
+| **Two-way Binding** | Syncs model and view | `[(ngModel)]="registerObj.email"` |
+| **Directives** | Dynamic DOM rendering | `*ngIf`, `*ngFor` |
+| **Routing** | Navigates between pages | `/dashboard`, `/events` |
+| **Service & Dependency Injection** | Reusable logic, API handling | `ApiService` |
+| **HttpClient** | Fetching API data | `this.http.get('/api/users')` |
+| **Animations & Hover Effects** | User-friendly experience | Animate.css transitions |
+
+---
+
+## 🔗 API Integration
+
+The system fetches and updates data using Angular’s **HttpClient module**.
+
+Example (in `service/api.service.ts`):
+```typescript
+getDashboardData(): Observable<any> {
+  return this.http.get('https://your-api-url.com/dashboard');
+}
+
+
+
