@@ -54,7 +54,6 @@ This project was developed as part of an **academic assignment** to demonstrate 
 | **HTML5 / CSS3 / Bootstrap** | UI design and responsiveness |
 | **Animate.css** | UI animations |
 | **Font Awesome** | Icons |
-| **Netlify** | Hosting (recommended) |
 | **Mock API / JSON Server / Backend API** | Data fetching and submission handling |
 
 ---
