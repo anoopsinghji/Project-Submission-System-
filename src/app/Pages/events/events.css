@@ -1,0 +1,101 @@
+:root {
+  --primary-bg: #0d47a1;
+  --accent-green: #2e7d32;
+  --light-bg: rgba(255, 255, 255, 0.05);
+}
+
+/* Section Spacing */
+.event-section {
+  margin-top: 100px;
+  color: white;
+}
+
+/* Card Styles */
+.competition-card {
+  background: linear-gradient(135deg, #1a237e, #283593);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Header Styles */
+.all-comp-header {
+  background: linear-gradient(90deg, #1565c0, #1e88e5);
+  color: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.add-edit-header {
+  background: linear-gradient(90deg, #2e7d32, #43a047);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+/* Individual Competition Cards */
+.competition-item {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+.competition-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Status Badges */
+.status-badge {
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+}
+
+.status-active {
+  background: linear-gradient(90deg, #43a047, #66bb6a);
+  color: white;
+}
+.status-upcoming {
+  background: linear-gradient(90deg, #ffb300, #ffca28);
+  color: #212121;
+}
+.status-completed {
+  background: linear-gradient(90deg, #757575, #9e9e9e);
+  color: white;
+}
+
+/* Sticky Form */
+.event-form {
+  position: sticky;
+  top: 110px;
+  background: #ffffff;
+  border-radius: 16px;
+  z-index: 1020;
+}
+
+/* Buttons */
+.hover-btn {
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+.hover-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Save Button */
+.hover-save {
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+.hover-save:hover {
+  background: linear-gradient(90deg, #2e7d32, #1b5e20);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .event-form {
+    position: static;
+    margin-top: 1.5rem;
+  }
+}

@@ -1,0 +1,192 @@
+<!-- HERO -->
+<main>
+  <!-- HERO (unchanged structure) -->
+  <section id="hero" class="hero-section d-flex align-items-center">
+    <div class="hero-shape shape-a" aria-hidden="true"></div>
+    <div class="hero-shape shape-b" aria-hidden="true"></div>
+
+    <div class="container text-center hero-content">
+      <div class="hero-lead-icon" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></div>
+      <h1 class="display-4 hero-title">Simplify Your Project Management Workflow</h1>
+<p class="lead hero-sub">A complete solution for organizers to handle registrations, project reviews, and winner announcements effortlessly.</p>
+
+
+
+      <div class="mt-4">
+        <a routerLink="/register" class="btn btn-hero btn-lg" role="button" aria-label="Get started">
+          <i class="fa-solid fa-rocket me-2"></i> Get Started
+        </a>
+      </div>
+    </div>
+    <div class="hero-gradient-overlap" aria-hidden="true"></div>
+  </section>
+
+  <!-- UPCOMING EVENTS -->
+  <section id="events" class="py-5 fade-in-section">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <h2 class="display-6 mb-1 fw-bold text-gradient">Upcoming Events ✨</h2>
+          <p class=" mb-0">Pick an event — details, price, venue and seats shown below.</p>
+        </div>
+        <div>
+          <a class="btn btn-outline-primary rounded-pill px-4 hover-lift">
+            <i class="fa-solid fa-list me-2"></i>View All Events
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        @for(item of $eventList | async; track $index) {
+        <article class="col-12 col-md-6 col-lg-4 fade-in-card">
+          <div class="card event-card h-100">
+            <div class="card-body d-flex flex-column">
+              <div class="d-flex justify-content-between mb-3 align-items-start">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="event-icon bg-grad-1 shadow-lg">
+                    <i class="fa-solid fa-code fa-lg"></i>
+                  </div>
+                  <div>
+                    <h5 class="mb-0 fw-semibold text-light">{{item.title}}</h5>
+                    <small class="text-muted">Build web solutions for real problems</small>
+                  </div>
+                </div>
+                <span class="badge status-open shadow-sm">Open</span>
+              </div>
+
+              <ul class="event-meta list-unstyled mb-3 small text-light">
+                <li><i class="fa-regular fa-calendar me-2 text-primary"></i>{{ item.startDate | date:'dd-MM-yy' }} → {{
+                  item.endDate | date:'dd-MM-yy' }}</li>
+                <li><i class="fa-solid fa-location-dot me-2 text-danger"></i> Bengaluru — Tech Park Auditorium</li>
+                <li><i class="fa-solid fa-users me-2 text-success"></i> Seats: <strong>240</strong></li>
+              </ul>
+
+              <p class="text-muted mb-3">{{item.description}}</p>
+
+              <div class="mt-auto d-flex justify-content-between align-items-center">
+                <a [routerLink]="['/projectsubmit', item.competitionId]"
+                  class="btn btn-sm btn-primary rounded-pill px-3 glow-btn">
+                  <i class="fa-solid fa-paper-plane me-2"></i>Submit Project
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section id="steps" class="py-5 bg-steps text-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-6 fw-bold mb-2 animate-fade">How to Register</h2>
+        <p class=" mb-0 animate-fade-delay">4 simple steps — clear, fast and secure.</p>
+      </div>
+
+      <div class="position-relative">
+        <!-- Connecting Line (only visible on large screens) -->
+        <div class="step-line d-none d-md-block"></div>
+
+        <div class="row g-4 justify-content-center mt-3">
+          <div class="col-12 col-md-3 text-center step-item animate-step">
+            <div class="step-number">1</div>
+            <div class="mt-3 step-icon">
+              <i class="fa-solid fa-calendar-plus fa-2x"></i>
+            </div>
+            <h6 class="mt-3 fw-semibold">Create Event</h6>
+            <p class="text-muted small">Organizers configure event, rules, timeline & prizes.</p>
+          </div>
+
+          <div class="col-12 col-md-3 text-center step-item animate-step">
+            <div class="step-number">2</div>
+            <div class="mt-3 step-icon">
+              <i class="fa-solid fa-clipboard-list fa-2x"></i>
+            </div>
+            <h6 class="mt-3 fw-semibold">Register & Submit</h6>
+            <p class="text-muted small">Participants register, upload project and details.</p>
+          </div>
+
+          <div class="col-12 col-md-3 text-center step-item animate-step">
+            <div class="step-number">3</div>
+            <div class="mt-3 step-icon">
+              <i class="fa-solid fa-star fa-2x"></i>
+            </div>
+            <h6 class="mt-3 fw-semibold">Judge & Evaluate</h6>
+            <p class="text-muted small">Judges score using rubrics; blind review supported.</p>
+          </div>
+
+          <div class="col-12 col-md-3 text-center step-item animate-step">
+            <div class="step-number">4</div>
+            <div class="mt-3 step-icon">
+              <i class="fa-solid fa-bullhorn fa-2x"></i>
+            </div>
+            <h6 class="mt-3 fw-semibold">Declare Winners</h6>
+            <p class="text-muted small">Winners announced, certificates & prizes distributed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="py-5 bg-dark text-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="display-6 fw-bold">What People Say</h2>
+        <p class="text-secondary mb-0">Organizers, sponsors, and participants share their experiences.</p>
+      </div>
+
+      <div class="row g-4 mt-3">
+        <div class="col-12 col-md-4">
+          <figure class="card testimonial-card p-4 h-100">
+            <div class="d-flex gap-3 align-items-center mb-3">
+              <div class="avatar shadow-glow"><i class="fa-solid fa-university fa-lg"></i></div>
+              <figcaption>
+                <div class="fw-bold text-white">Dr. S. Rao</div>
+                <small class="text-light">University Coordinator</small>
+              </figcaption>
+            </div>
+            <blockquote class="blockquote mb-0 fst-italic text-light">
+              “HackCompete reduced admin work drastically — judges appreciated the blind-review flow and scoring tools.”
+            </blockquote>
+          </figure>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <figure class="card testimonial-card p-4 h-100">
+            <div class="d-flex gap-3 align-items-center mb-3">
+              <div class="avatar shadow-glow"><i class="fa-solid fa-building fa-lg"></i></div>
+              <figcaption>
+                <div class="fw-bold text-white">A. Mehta</div>
+                <small class="text-light">Corporate Organizer</small>
+              </figcaption>
+            </div>
+            <blockquote class="blockquote mb-0 fst-italic text-light">
+              “Excellent analytics and participant insights — helped shortlist high-potential teams quickly.”
+            </blockquote>
+          </figure>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <figure class="card testimonial-card p-4 h-100">
+            <div class="d-flex gap-3 align-items-center mb-3">
+              <div class="avatar shadow-glow"><i class="fa-solid fa-user fa-lg"></i></div>
+              <figcaption>
+                <div class="fw-bold text-white">Riya Patel</div>
+                <small class="text-light">Participant</small>
+              </figcaption>
+            </div>
+            <blockquote class="blockquote mb-0 fst-italic text-light">
+              “Submission & certificate automation saved us time. Platform is intuitive and fast to use.”
+            </blockquote>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>

@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --accent1: #f7b731;
+  --accent2: #ff6b6b;
+  --accent3: #ffd93d;
+}

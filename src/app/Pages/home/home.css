@@ -1,0 +1,499 @@
+:root {
+  --bg-navy: #0a0f1d;
+  --text: #0d47e6;
+  --muted: #a0aec0;
+  --accent1: #6366f1; /* indigo-500 */
+  --accent2: #8b5cf6; /* violet-500 */
+  --accent3: #ec4899; /* pink-500 */
+  --card-bg: rgba(20, 25, 45, 0.6);
+  --ease: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* { box-sizing: border-box; }
+main {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #5288f4;
+  background: #060606;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+/* ================= HERO ================= */
+.hero-section {
+  min-height: 100vh;
+  padding-top: 92px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* background: radial-gradient(circle at 10% 20%, rgba(5, 5, 6, 0.08), transparent 30%),
+              radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.06), transparent 30%); */
+              background: #040607;
+}
+
+.hero-content {
+  z-index: 4;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.hero-lead-icon {
+  font-size: 48px;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: #021022;
+  box-shadow: 0 12px 40px rgba(99, 102, 241, 0.25);
+  animation: pulseIcon 3s ease-in-out infinite;
+}
+
+@keyframes pulseIcon {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.hero-title {
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(to right, #2046c2, #00ffff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-gradient-overlap {
+  position: absolute;
+  inset: -10% -20% auto -20%;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(96,165,250,0.18), transparent 70%);
+  filter: blur(60px);
+  opacity: 0.2;
+  z-index: 2;
+  animation: bgShift 18s ease-in-out infinite alternate;
+}
+
+@keyframes bgShift {
+  0% { transform: translateX(-10%) translateY(0); }
+  100% { transform: translateX(10%) translateY(-20px); }
+}
+
+.hero-shape {
+  position: absolute;
+  border-radius: 14px;
+  opacity: 0.08;
+  z-index: 1;
+  filter: blur(34px);
+  animation: float 12s ease-in-out infinite;
+}
+/* .shape-a { width: 320px; height: 160px; right: 6%; top: 12%; background: linear-gradient(90deg, var(--accent2), var(--accent3)); animation-duration: 10s; }
+.shape-b { width: 260px; height: 260px; left: 6%; bottom: 8%; background: linear-gradient(90deg, var(--accent1), var(--accent2)); animation-duration: 14s; } */
+/* @keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(2deg); }
+} */
+
+.shape-a { background: linear-gradient(90deg, #7e81f7, #a37cf9); } /* Lighter indigo/violet */
+.shape-b { background: linear-gradient(90deg, #6366f1, #818cf8); } /* Softer indigo */
+
+.btn-hero {
+  background: linear-gradient(90deg, var(--accent2), var(--accent3));
+  color: #021022;
+  border-radius: 12px;
+  padding: 0.85rem 1.5rem;
+  font-weight: 700;
+  border: none;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+.btn-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(95, 95, 233, 0.2), transparent);
+  transition: left 0.6s;
+}
+.btn-hero:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 18px 40px rgba(236, 7, 121, 0.35);
+}
+.btn-hero:hover::before {
+  left: 100%;
+}
+
+/* ================= EVENTS ================= */
+/* 🌈 Gradient text */
+.text-gradient {
+  background: linear-gradient(90deg, #7f00ff, #e100ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ✨ Fade-in on scroll */
+.fade-in-section {
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeInUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ✨ Individual card fade-in */
+.fade-in-card {
+  animation: floatUp 1.2s ease both;
+  opacity: 0;
+}
+@keyframes floatUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* 🌟 Card Styles */
+.event-card {
+  background: linear-gradient(145deg, #e68888, #d6e2f4);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.05);
+  color: #fff;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  position: relative;
+}
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at top left, rgba(99,102,241,0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+.event-card:hover::before {
+  opacity: 1;
+}
+.event-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.25);
+}
+
+/* 🧩 Icon style */
+.event-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.event-card:hover .event-icon {
+  transform: rotate(10deg) scale(1.1);
+  box-shadow: 0 0 20px rgba(147, 51, 234, 0.6);
+}
+
+/* 🪄 Buttons */
+.glow-btn {
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  color: white;
+  border: none;
+  box-shadow: 0 0 12px rgba(0, 183, 255, 0.4);
+  transition: all 0.3s ease;
+}
+.glow-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 183, 255, 0.8);
+}
+
+/* 🌟 Badge */
+.status-open {
+  background: linear-gradient(90deg, #00b09b, #96c93d);
+  color: white;
+  font-weight: 600;
+}
+
+/* 🧠 Button hover */
+.hover-lift {
+  transition: all 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-3px);
+  background-color: #007bff;
+  color: white;
+}
+/* Fix click issue on button */
+.event-card::before {
+  pointer-events: none; /* ✅ allows clicks to pass through */
+}
+
+/* Optional: improve the glow animation button */
+.glow-btn {
+  background: linear-gradient(90deg, #6d28d9, #3b82f6);
+  color: white;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 20px rgba(99,102,241,0.7);
+}
+
+/* Subtle inner glow animation */
+.glow-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), transparent, rgba(255,255,255,0.4));
+  transition: all 0.6s ease;
+}
+
+.glow-btn:hover::after {
+  left: 100%;
+}
+
+
+/* ================= STEPS ================= */
+/* Background gradient + subtle glow */
+.bg-steps {
+  background: linear-gradient(to bottom right, #0a0f1d, #111827);
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-steps::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(139,92,246,0.1), transparent 60%);
+  pointer-events: none;
+}
+
+/* Step card design */
+.step-item {
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.step-item:hover {
+  transform: translateY(-10px);
+}
+
+.step-number {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: #fff;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  box-shadow: 0 0 25px rgba(139,92,246,0.4);
+  transition: all 0.4s ease;
+}
+
+.step-item:hover .step-number {
+  transform: scale(1.15) rotate(5deg);
+  box-shadow: 0 0 35px rgba(139,92,246,0.7);
+}
+
+/* Icon pulse on hover */
+.step-icon i {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #a5b4fc;
+}
+
+.step-item:hover .step-icon i {
+  transform: scale(1.2);
+  color: #c4b5fd;
+}
+
+/* Connecting glowing line between steps */
+.step-line {
+  position: absolute;
+  top: 45px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(99,102,241,0.4), rgba(139,92,246,0.7), rgba(99,102,241,0.4));
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(139,92,246,0.6);
+  z-index: 1;
+}
+
+/* Simple fade-up animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.animate-fade-delay {
+  animation: fadeUp 1s ease forwards;
+}
+
+.animate-step {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.animate-step:nth-child(1) { animation-delay: 0.2s; }
+.animate-step:nth-child(2) { animation-delay: 0.4s; }
+.animate-step:nth-child(3) { animation-delay: 0.6s; }
+.animate-step:nth-child(4) { animation-delay: 0.8s; }
+/* Make text inside each step white */
+.step-item h6,
+.step-item p,
+.step-item i {
+  color: #f8f9fa !important; /* soft white */
+}
+
+/* Make muted text a bit brighter for readability */
+.step-item p.text-muted {
+  color: #e5e7eb !important;
+}
+
+/* Optional: add slight glowing hover for text */
+.step-item:hover h6 {
+  color: #c4b5fd !important; /* light purple glow */
+  text-shadow: 0 0 8px rgba(139,92,246,0.6);
+}
+
+/* Optional: keep icon color consistent on hover */
+.step-item:hover .step-icon i {
+  color: #ffffff !important;
+}
+
+
+/* ================= TESTIMONIALS ================= */
+#testimonials {
+  background: linear-gradient(to bottom, #0f172a, #1e293b);
+  color: #f8fafc;
+}
+
+/* Card styling */
+.testimonial-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.25);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.testimonial-card:hover::before {
+  opacity: 1;
+}
+
+/* Avatar */
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #021022;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.testimonial-card:hover .avatar {
+  transform: scale(1.15);
+}
+
+/* Text */
+.blockquote {
+  color: #e2e8f0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.text-light small {
+  color: #cbd5e1 !important;
+}
+
+/* Subtle Glow */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+/* Entry Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.testimonial-card {
+  animation: fadeInUp 0.8s ease both;
+}
+.testimonial-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.testimonial-card:nth-child(3) {
+  animation-delay: 0.4s;
+}

@@ -1,0 +1,88 @@
+
+
+.text-gradient {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.submission-table {
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+}
+
+.table-header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  font-weight: 600;
+}
+
+.table-header th {
+  padding: 1rem;
+  vertical-align: middle;
+  letter-spacing: 0.5px;
+}
+
+.table-row {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.table-row:hover {
+  background-color: #f1f7ff;
+  transform: scale(1.01);
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.15);
+}
+
+.github-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.github-link:hover {
+  color: #2575fc;
+  text-decoration: underline;
+}
+
+.status-approved {
+  background: #16a34a;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.status-pending {
+  background: #facc15;
+  color: #000;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.status-rejected {
+  background: #dc2626;
+  color: white;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.rank-badge {
+  background: #1e40af;
+  color: white;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+}
+
+.hover-btn {
+  transition: all 0.3s ease;
+}
+
+.hover-btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 8px rgba(37,117,252,0.3);
+}

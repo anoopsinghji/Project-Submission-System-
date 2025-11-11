@@ -1,0 +1,117 @@
+<div class="container mt-4">
+  <h2 class="mb-4 text-center fw-bold text-primary animate__animated animate__fadeInDown">
+    🏆 Admin Dashboard Overview
+  </h2>
+
+  <div class="row g-4">
+    <!-- Total Users -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp">
+        <div class="card-body">
+          <i class="fa-solid fa-users fa-2x text-primary mb-2"></i>
+          <h5>Total Users</h5>
+          <h3>{{dashboardData.totalUsers}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Competitions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="card-body">
+          <i class="fa-solid fa-trophy fa-2x text-warning mb-2"></i>
+          <h5>Total Competitions</h5>
+          <h3>{{dashboardData.totalCompetitions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ongoing Competitions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="card-body">
+          <i class="fa-solid fa-spinner fa-2x text-info mb-2"></i>
+          <h5>Ongoing Competitions</h5>
+          <h3>{{dashboardData.ongoingCompetitions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Completed Competitions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp">
+        <div class="card-body">
+          <i class="fa-solid fa-flag-checkered fa-2x text-success mb-2"></i>
+          <h5>Completed Competitions</h5>
+          <h3>{{dashboardData.completedCompetitions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upcoming Competitions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="card-body">
+          <i class="fa-solid fa-calendar-days fa-2x text-secondary mb-2"></i>
+          <h5>Upcoming Competitions</h5>
+          <h3>{{dashboardData.upcomingCompetitions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total Submissions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="card-body">
+          <i class="fa-solid fa-upload fa-2x text-primary mb-2"></i>
+          <h5>Total Project Submissions</h5>
+          <h3>{{dashboardData.totalProjectSubmissions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pending Submissions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp">
+        <div class="card-body">
+          <i class="fa-solid fa-hourglass-half fa-2x text-warning mb-2"></i>
+          <h5>Pending Submissions</h5>
+          <h3>{{dashboardData.pendingSubmissions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Approved Submissions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="card-body">
+          <i class="fa-solid fa-circle-check fa-2x text-success mb-2"></i>
+          <h5>Approved Submissions</h5>
+          <h3>{{dashboardData.approvedSubmissions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rejected Submissions -->
+    <div class="col-md-4">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-2s">
+        <div class="card-body">
+          <i class="fa-solid fa-circle-xmark fa-2x text-danger mb-2"></i>
+          <h5>Rejected Submissions</h5>
+          <h3>{{dashboardData.rejectedSubmissions}}</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Winners Declared -->
+    <div class="col-md-4 mx-auto">
+      <div class="card text-center shadow hover-card animate__animated animate__fadeInUp animate__delay-3s">
+        <div class="card-body">
+          <i class="fa-solid fa-crown fa-2x text-warning mb-2"></i>
+          <h5>Winners Declared</h5>
+          <h3>{{dashboardData.winnersDeclared}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

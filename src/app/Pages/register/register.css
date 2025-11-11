@@ -1,0 +1,113 @@
+/* === AUTH WRAPPER === */
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #10172a, #1e293b, #0f172a);
+  padding: 1.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* === AUTH CARD === */
+.auth-card {
+  width: 100%;
+  max-width: 430px;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  color: #e2e8f0;
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.7s ease-out;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
+
+/* === FORM TITLE === */
+.form-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgba(129, 140, 248, 0.3);
+}
+
+.form-subtitle {
+  font-size: 0.95rem;
+  color: #b0bec5;
+  margin-bottom: 1.5rem;
+}
+
+/* === FORM INPUTS === */
+.form-control,
+.form-select {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  transition: all 0.25s ease;
+}
+
+.form-control::placeholder {
+  color: #94a3b8;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: rgba(40, 51, 75, 0.9);
+  border-color: #818cf8;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.4);
+}
+
+/* === BUTTON === */
+.btn-primary {
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 14px rgba(99, 102, 241, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.5);
+  background: linear-gradient(90deg, #7c3aed, #a78bfa);
+}
+
+/* === LINKS === */
+.link-switch {
+  color: #8b5cf6;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link-switch:hover {
+  color: #a78bfa;
+  text-decoration: underline;
+}
+
+/* === HIDDEN === */
+.hidden {
+  display: none !important;
+}
+
+/* === ANIMATION === */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .auth-card {
+    padding: 1.8rem;
+    margin: 0.5rem;
+  }
+  .form-title {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,58 @@
+<div class="container py-5">
+    <h3 class="text-center mb-4 animate__animated animate__fadeInDown fw-bold text-gradient">
+        <i class="fa-solid fa-code-branch me-2"></i>Project Submissions
+    </h3>
+
+    <div class="table-responsive animate__animated animate__fadeInUp">
+        <table class="table table-hover table-bordered shadow-lg align-middle submission-table">
+            <thead class="table-header">
+                <tr>
+                    <th><i class="fa-solid fa-hashtag me-2"></i>ID</th>
+                    <th><i class="fa-solid fa-code me-2"></i>Project Title</th>
+                    <!-- <th><i class="fa-solid fa-user me-2"></i>Participant</th> -->
+                    <th><i class="fa-solid fa-envelope me-2"></i>Email</th>
+                    <th><i class="fa-solid fa-user me-2"></i>Participant</th>
+                    <th><i class="fa-brands fa-github me-2"></i>GitHub Link</th>
+                    <th><i class="fa-solid fa-ranking-star me-2"></i>Rank</th>
+                    <th><i class="fa-solid fa-flag me-2"></i>Status</th>
+                    <th class="text-center"><i class="fa-solid fa-gear me-2"></i>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example Row -->
+                @for(item of submissionList; track $index){
+                <tr class="table-row">
+                    <td>{{$index}}</td>
+                    <td><strong>{{item.projectTitle}}</strong></td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.fullName}}</td>
+                    <td>
+                        <a [href]="item.githubLink" target="_blank" class="github-link">
+                            <i class="fa-brands fa-github me-1"></i>View Repo
+                        </a>
+                    </td>
+                    <td><span class="badge rank-badge">{{item.rank}}</span></td>
+                    <td><span class="badge status-approved">{{item.status}}</span></td>
+                    <td class="text-center">
+                        <button (click)="markAsWinner(item.submissionId)" class="btn btn-outline-primary  btn-sm hover-btn me-3 " title="Mark as Winner">
+                            <i class="fa-solid fa-trophy text-warning"></i>
+                        </button>
+                        <button (click)="onApprove(item.submissionId)" class="btn btn-outline-danger me-2 btn-sm hover-btn" title="Mark as Approved">
+                            <i class="fa-solid fa-circle-check text-success"></i>
+
+                        </button>
+                        <button (click)="rejectProject(item.submissionId)" class="btn btn-outline-primary me-3 btn-sm hover-btn" title="Mark as Rejected">
+                          <i class="fa-solid fa-ban text-danger"></i>
+
+
+                        </button>
+
+                </tr>
+
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+</div>

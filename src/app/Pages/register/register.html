@@ -1,0 +1,79 @@
+<div class="auth-wrapper">
+  <div class="auth-card">
+    <!-- Register Form -->
+    <form id="registerForm" [class]="isLogin() ? 'hidden' : ''" (ngSubmit)="onRegister()">
+      <div class="text-center mb-4">
+        <h2 class="form-title">Create Account</h2>
+        <p class="form-subtitle">Join the hackathon community</p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fa-solid fa-user me-2 text-primary"></i>Full Name</label>
+        <input type="text" name="fullName" [(ngModel)]="registerObj.fullName" class="form-control" placeholder="e.g. Sumit Kumar" required />
+        <div *ngIf="!registerObj.fullName && showValidation" class="text-danger small mt-1">Full name is required.</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fa-solid fa-envelope me-2 text-primary"></i>Email</label>
+        <input type="email" name="email" [(ngModel)]="registerObj.email" class="form-control" placeholder="you@university.edu" required />
+        <div *ngIf="registerObj.email && !registerObj.email.includes('@')" class="text-danger small mt-1">Enter a valid email address.</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fa-solid fa-lock me-2 text-primary"></i>Password</label>
+        <input type="password" name="password" [(ngModel)]="registerObj.password" class="form-control" placeholder="••••••••" required minlength="6" />
+        <div *ngIf="registerObj.password && registerObj.password.length < 6" class="text-danger small mt-1">Password must be at least 6 characters.</div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fa-solid fa-building-columns me-2 text-primary"></i>College</label>
+        <input type="text" name="collegeName" [(ngModel)]="registerObj.collegeName" class="form-control" placeholder="e.g. PU, MIT, DU" required />
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label"><i class="fa-solid fa-user-tag me-2 text-primary"></i>Role</label>
+        <select name="role" class="form-select" [(ngModel)]="registerObj.role" required>
+          <option value="" disabled>Select your role</option>
+          <option value="student">Student</option>
+          <option value="Organizer">Organizer</option>
+        </select>
+      </div>
+
+      <button type="button" (click)="onRegister()" class="btn btn-primary w-100 py-2">Register</button>
+
+      <div class="text-center mt-4">
+        <p class="mb-0 text-light">
+          Already have an account?
+          <a (click)="toggleForm()" class="link-switch">Sign in</a>
+        </p>
+      </div>
+    </form>
+
+    <!-- Login Form -->
+    <form id="loginForm" [class]="isLogin() ? '' : 'hidden'" (ngSubmit)="onLogin()">
+      <div class="text-center mb-4">
+        <h2 class="form-title">Welcome Back</h2>
+        <p class="form-subtitle">Sign in to your account</p>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label"><i class="fa-solid fa-envelope me-2 text-primary"></i>Email</label>
+        <input type="email" name="loginEmail" [(ngModel)]="loginObj.email" class="form-control" placeholder="you@university.edu" required />
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label"><i class="fa-solid fa-lock me-2 text-primary"></i>Password</label>
+        <input type="password" name="loginPassword" [(ngModel)]="loginObj.password" class="form-control" placeholder="••••••••" required />
+      </div>
+
+      <button type="button" (click)="onLogin()" class="btn btn-primary w-100 py-2">Login</button>
+
+      <div class="text-center mt-4">
+        <p class="mb-0 text-light">
+          Don’t have an account?
+          <a (click)="toggleForm()" class="link-switch">Register now</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
